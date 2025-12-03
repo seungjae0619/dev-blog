@@ -1,12 +1,42 @@
+"use client";
+
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/images/blog-logo.png";
 import { FaGithub } from "react-icons/fa";
 
 export default function Header() {
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // 현재 스크롤 위치가 이전보다 크면(내리는 중) -> 숨김(false)
+      // 현재 스크롤 위치가 이전보다 작으면(올리는 중) -> 보임(true)
+      // 단, 최상단(0)에 있을 땐 항상 보여줌
+      if (currentScrollY > lastScrollY && currentScrollY > 10) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
     <div>
-      <header className="fixed top-0 z-50 left-0 border-b border-gray-600 w-full bg-[#131313] ">
+      <header
+        className={`fixed top-0 z-50 left-0 border-b border-gray-600 w-full bg-[#131313] transition-transform duration-300 ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <nav className="max-w-5xl m-auto p-3  ">
           <div className="flex justify-between items-center">
             <div className="">
