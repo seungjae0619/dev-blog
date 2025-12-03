@@ -32,7 +32,7 @@ export default function PostList({ posts }: PostListProps) {
 
   return (
     <div className="flex ">
-      <div className="md:min-w-3xl rounded-2xl pr-10 w-lg">
+      <div className="md:min-w-3xl rounded-2xl pr-10 sm:w-xl w-md">
         {sortedPosts.map((item) => (
           <Link key={item.slug} href={`/blog/${item.slug}`}>
             <div className="group flex justify-between py-3 hover:opacity-80 cursor-pointer">
