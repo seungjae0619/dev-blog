@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "@/public/images/blog-logo.png";
+import { FaGithub } from "react-icons/fa";
 
 export default function Header() {
   return (
@@ -16,9 +17,16 @@ export default function Header() {
                 </div>
               </Link>
             </div>
-            <div className="gap-3 flex">
+            <div className="gap-5 flex items-center">
               <Link href={"/"} className="font-bold text-[18px]">
                 홈
+              </Link>
+              <Link
+                href={"https://github.com/seungjae0619"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub className="text-2xl" />
               </Link>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import { getAllPosts, getPostHeadings } from "@/lib/posts";
+import Image from "next/image";
 
 export default async function Page({
   params,
@@ -8,13 +9,21 @@ export default async function Page({
   const { slug } = await params;
   const { default: Post, metadata } = await import(`@/posts/${slug}.mdx`);
 
-  const headings = getPostHeadings(slug);
-
   return (
-    <div className="m-auto w-2xl pt-5">
+    <div className="m-auto w-[720px] pt-5">
       <div className="py-2">
         <span className="text-5xl font-bold">{metadata.title}</span>
-        <p className="pt-2 text-[15px] text-gray-400">{metadata.date}</p>
+        <p className="pt-1 text-[15px] text-gray-400">{metadata.date}</p>
+
+        <Image
+          src={metadata.thumbnail}
+          width={720}
+          height={100}
+          alt="thumbnail"
+          className="rounded-sm mt-3 opacity-95 "
+        />
+
+        <hr className="my-8 border-slate-200" />
       </div>
       <div className="flex">
         <article className="markdown w-[700px]">
