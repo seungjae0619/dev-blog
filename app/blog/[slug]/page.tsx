@@ -26,7 +26,7 @@ export default async function Page({
         <hr className="my-8 border-slate-200" />
       </div>
       <div className="flex">
-        <article className="markdown w-[700px]">
+        <article className="markdown sm:w-[700px] w-[360px]">
           <Post />
         </article>
       </div>

@@ -36,7 +36,7 @@ export default function PostList({ posts }: PostListProps) {
         {sortedPosts.map((item) => (
           <Link key={item.slug} href={`/blog/${item.slug}`}>
             <div className="group flex justify-between py-3 hover:opacity-80 cursor-pointer">
-              <span className="text-xl text-slate-100 font-semibold whitespace-pre-wrap w-[500px]">
+              <span className="text-xl text-slate-100 font-semibold whitespace-pre-wrap w-[500px] max-[400px]:w-sm">
                 {item.title} <br />
                 <p className="font-normal text-sm pt-1 text-gray-400">
                   {item.excerpt}
