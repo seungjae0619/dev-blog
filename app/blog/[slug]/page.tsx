@@ -10,7 +10,7 @@ export default async function Page({
   const { default: Post, metadata } = await import(`@/posts/${slug}.mdx`);
 
   return (
-    <div className="m-auto md:w-[720px] pt-5  sm:w-[540px] w-[380px]">
+    <div className="m-auto md:w-[720px] pt-5  sm:w-[540px] w-[360px]">
       <div className="py-2">
         <span className="text-5xl font-bold">{metadata.title}</span>
         <p className="pt-1 text-[15px] text-gray-400">{metadata.date}</p>
