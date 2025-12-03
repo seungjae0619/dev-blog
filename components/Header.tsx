@@ -14,9 +14,6 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
-      // 현재 스크롤 위치가 이전보다 크면(내리는 중) -> 숨김(false)
-      // 현재 스크롤 위치가 이전보다 작으면(올리는 중) -> 보임(true)
-      // 단, 최상단(0)에 있을 땐 항상 보여줌
       if (currentScrollY > lastScrollY && currentScrollY > 10) {
         setIsVisible(false);
       } else {

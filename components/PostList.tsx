@@ -38,7 +38,7 @@ export default function PostList({ posts }: PostListProps) {
             <div className="group flex justify-between py-3 hover:opacity-80 cursor-pointer">
               <span className="text-xl text-slate-100 font-semibold whitespace-pre-wrap w-[500px]">
                 {item.title} <br />
-                <p className="font-normal text-sm py-2 text-gray-400">
+                <p className="font-normal text-sm pt-1 text-gray-400">
                   {item.excerpt}
                 </p>
                 <p className="font-light text-[13px] text-gray-400">
