@@ -32,7 +32,7 @@ export default function PostList({ posts }: PostListProps) {
 
   return (
     <div className="flex ">
-      <div className="min-w-3xl rounded-2xl pr-10">
+      <div className="md:min-w-3xl rounded-2xl pr-10 w-lg">
         {sortedPosts.map((item) => (
           <Link key={item.slug} href={`/blog/${item.slug}`}>
             <div className="group flex justify-between py-3 hover:opacity-80 cursor-pointer">
@@ -46,20 +46,20 @@ export default function PostList({ posts }: PostListProps) {
                 </p>
               </span>
 
-              <div className="overflow-hidden rounded-sm ">
+              <div className="overflow-hidden rounded-sm">
                 <Image
                   src={item.thumbnail}
                   width={180}
                   height={100}
                   alt="thumbnail"
-                  className="opacity-85 object-cover transition-transform duration-300 group-hover:scale-110"
+                  className="rounded-sm opacity-85 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
             </div>
           </Link>
         ))}
       </div>
-      <aside className="border-l border-gray-400 p-4">
+      <aside className="border-l border-gray-400 p-4 max-lg:hidden">
         <p className="text-slate-100">태그</p>
         <div className="flex flex gap-2 mb-8 overflow-x-auto">
           {allTags.map((tag) => (
