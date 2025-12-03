@@ -1,0 +1,39 @@
+export const metadata = {
+  title: "DOM 이해하기",
+  thumbnail: "/images/dom.png",
+  date: "2025-11-20",
+  excerpt: "브라우저의 DOM 알아보기",
+  tag: ["Web"],
+};
+
+## **✅ 들어가며**
+
+지난번에 브라우저의 렌더링 방식에 대해서 알아보며 DOM 트리를 간단하게 알아봤다. 이번엔 DOM 에 대해서 더 자세히
+알아보려고 한다.
+
+## **✅ DOM이란**
+
+DOM(Document Object Model)이란 문서 객체 모델로 HTML 태그를 트리 형태로 구조화 시킨 것을 DOM이라고 한다.
+DOM의 모든 HTML 태그는 객체이며 태그 내의 문자까지 객체이다.
+
+이런 객체는 자바스크립트를 통해 접근할 수 있으며 페이지를 조작할 때 사용된다.
+
+즉, DOM은 HTML 로 만들어진 웹페이지와 스크립트 언어 또는 프로그래밍 언어를 이어주는 역할을 한다.
+
+자바스크립트에서 DOM에 접근을 할 때는 `document.body` 형태로 접근하며 이는 `<body>` 태그를 의미한다
+
+---
+
+![img](https://static.tosspayments.com/docs/glossary/dom-node.png)
+
+위 그림을 보면 DOM의 구조를 알 수 있다. 최상위 노드로 **document** 노드가 있으며 그 아래에 **Root 노드**인
+`<html>`태그가 존재한다. 그 아래로는 자식 노드들이 존재한다.
+
+그림을 보면 4개의 노드가 존재하는데 이는 실무에서 가장 많이 사용하는 DOM 노드들이다.
+
+1. Document Node
+2. Element Node
+3. Text Node
+4. Attribute Node
+
+## **✅ Document Node**

@@ -1,0 +1,68 @@
+.markdown h1 {
+  @apply text-4xl font-bold mt-10 mb-6 leading-tight;
+}
+
+.markdown h2 {
+  @apply text-3xl font-semibold mt-8 mb-4 leading-snug;
+}
+
+.markdown h3 {
+  @apply text-2xl font-semibold mt-6 mb-3;
+}
+
+.markdown p {
+  @apply text-base leading-7 my-4 text-slate-100;
+}
+
+.markdown a {
+  @apply text-blue-600 underline hover:text-blue-800;
+}
+
+.markdown ul {
+  @apply list-disc pl-6 my-4;
+}
+
+.markdown ol {
+  @apply list-decimal pl-6 my-4;
+}
+
+.markdown li {
+  @apply my-1;
+}
+
+.markdown blockquote {
+  @apply border-l-4 border-gray-300 pl-4 italic text-gray-600 my-6;
+}
+
+.markdown code {
+  @apply bg-gray-800 px-1 py-0.5 rounded text-sm font-mono;
+}
+
+.markdown pre {
+  @apply bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto my-6;
+}
+
+.markdown pre code {
+  @apply bg-transparent p-0 text-inherit;
+}
+
+.markdown img {
+  @apply rounded-lg my-6;
+}
+
+/* 테이블 스타일 */
+.markdown table {
+  @apply w-full border-collapse my-6;
+}
+
+.markdown th {
+  @apply bg-gray-100 font-semibold border px-3 py-2;
+}
+
+.markdown td {
+  @apply border px-3 py-2;
+}
+
+.markdown img {
+  @apply opacity-90;
+}
