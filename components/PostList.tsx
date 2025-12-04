@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Post {
   slug: string;
@@ -18,11 +18,12 @@ interface PostListProps {
 }
 
 export default function PostList({ posts }: PostListProps) {
-  const [selectedTag, setSelectedTag] = useState("All");
-  const allTags = ["All", ...new Set(posts.flatMap((post) => post.tag))];
+  const [selectedTag, setSelectedTag] = useState("전체");
+
+  const allTags = ["전체", ...new Set(posts.flatMap((post) => post.tag))];
 
   const filteredPosts =
-    selectedTag === "All"
+    selectedTag === "전체"
       ? posts
       : posts.filter((post) => post.tag.includes(selectedTag));
 
@@ -61,7 +62,7 @@ export default function PostList({ posts }: PostListProps) {
       </div>
       <aside className="border-l border-gray-400 p-4 max-lg:hidden">
         <p className="text-slate-100">태그</p>
-        <div className="flex flex gap-2 mb-8 overflow-x-auto">
+        <div className="flex flex-wrap gap-2 mb-8 overflow-x-auto">
           {allTags.map((tag) => (
             <button
               key={tag}
